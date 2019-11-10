@@ -1,0 +1,52 @@
+@size: 4px;
+
+.dot {
+    width: @size;
+    height: @size;
+    background-color: #e8f8f8;
+    position: relative;
+    top: 50%;
+    // border-radius: 50%;
+    margin: auto;
+    transform: translate(0, -50%);
+
+    animation-name: blinker;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0b1414;
+    animation: backgroundPhase 20s infinite;
+}
+
+@keyframes blinker {
+    from {
+        background-color: #070808;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        background-color: #297e7e;
+        opacity: 0;
+    }
+}
+
+@keyframes backgroundPhase {
+0%{
+    background-color: #0b1414;
+}
+50%{
+    background-color: #297e7e;
+}
+100%{
+    background-color: #0b1414;
+}
+}
